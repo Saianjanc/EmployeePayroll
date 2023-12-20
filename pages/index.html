@@ -11,7 +11,7 @@
 <body>
     <div class="header">
         <div class="space">
-        <div class="logo"><img src="profile.png" alt="profileAvatar" wclassth="50px" height="48px"></div>
+        <div class="logo"><img src="/assests/profile.png" alt="profileAvatar" width="50px" height="48px"></div>
         <div class="headtitle">
             <div class="title_up">Employee</div>
             <div class="title_btm">Payroll</div>
@@ -20,73 +20,70 @@
     </div>
     <div class="main">
         <div class="registerform">
-            <span class="registertitle">Employee Payroll Form</span>
-            <div class="formname">
-                <label class="formtext">Name</label>
-                <input type="text" class="formbox">
+            <div class="registertitle">Employee Payroll Form</div>
+            <div class="innerform">
+            <div class="formlabel">
+                    <label class="formtext">Name</label>
+                    <label class="formtext">Profile image</label>
+                    <label class="formtext">Gender</label>
+                    <label class="formtext">Department</label>
+                    <label class="formtext">Salary</label>
+                    <label class="formtext">Start Date</label>
+                    <label class="formtext">Notes</label>
             </div>
+            <div class="forminput">
+            <input type="text" class="formname">
             <div class="formimg">
-                <label class="formtext">Profile image</label>
-            <div class="profileimg">
-                <input type="radio" name="profileimg" class="profile1" style="margin-left: 20px;">
-                <img src="profile1.png" alt="profile1">
+            <div class="profileimg" id="profileimg">
+                <input type="radio" name="profileimg" class="profile1">
+                <img src="/assests/profile1.png" alt="profile1">
             </div>
             <div class="profileimg">
                 <input type="radio" name="profileimg" class="profile2">
-                <img src="profile2.png" alt="profile2">
+                <img src="/assests/profile2.png" alt="profile2">
             </div>
             <div class="profileimg">
                 <input type="radio" name="profileimg" class="profile3">
-                <img src="profile3.png" alt="profile3">
+                <img src="/assests/profile3.png" alt="profile3">
             </div>
             <div class="profileimg">
                 <input type="radio" name="profileimg" class="profile4">
-                <img src="profile4.png" alt="profile4">
+                <img src="/assests/profile4.png" alt="profile4">
             </div>
-            </div>
+        </div>
             <div class="formgender">
-                <label class="formtext">Gender</label>
-                <input type="radio" name="Gender" class="Male" style="margin-left: 63px;">
+                <input type="radio" name="Gender" class="Male">
                 <label>Male</label>
                 <input type="radio" name="Gender" class="Female">
                 <label>Female</label>
             </div>
             <div class="formdepartment">
-                <label class="formtext">Department</label>
             <div>
-                <input type="checkbox" name="Department" class="HR" style="margin-left: 32px;">
+                <input type="checkbox" name="Department" id="HR">
                 <label>HR</label>
             </div>
             <div>
-                <input type="checkbox" name="Department" class="Sales">
+                <input type="checkbox" name="Department" id="Sales">
                 <label>Sales</label>
             </div>
             <div>
-                <input type="checkbox" name="Department" class="Finance">
+                <input type="checkbox" name="Department" id="Finance">
                 <label>Finance</label>
             </div>
             <div>
-                <input type="checkbox" name="Department" class="Engineer">
+                <input type="checkbox" name="Department" id="Engineer">
                 <label>Engineer</label>
             </div>
             <div>
-                <input type="checkbox" name="Department" class="Others">
+                <input type="checkbox" name="Department" id="Others">
                 <label>Others</label>
             </div>
             </div>
             <div class="formsalary">
-                <label class="formtext">Salary</label>
-                <select name="Salary" class="Salary" style="margin-left: 65px;">
-                    <option value="" disabled selected>Select Salary</option>
-                    <option value="3LPA">3LPA</option>
-                    <option value="4LPA">4LPA</option>
-                    <option value="5LPA">5LPA</option>
-                    <option value="6LPA">6LPA</option>
-                </select>
+                <input type="range" name="salary" id="salary" min="4" max="10">
             </div>
             <div class="formstartdate">
-                <label class="formtext">Start Date</label>
-                <select name="startday" class="startdate" style="margin-left: 42px;">
+                <select name="startday" class="startdate">
                     <option value="" disabled selected>Day</option>
                     <option value="Monday">Monday</option>
                     <option value="Tuesday">Tuesday</option>
@@ -96,7 +93,7 @@
                     <option value="Saturday">Saturday</option>
                     <option value="Sunday">Sunday</option>
                 </select>
-                <select name="startmonth" class="startdate" style="margin-left: 42px;">
+                <select name="startmonth" class="startmonth">
                     <option value="" disabled selected>Month</option>
                     <option value="January">January</option>
                     <option value="February">February</option>
@@ -111,7 +108,7 @@
                     <option value="Novmeber">Novmeber</option>
                     <option value="December">December</option>
                 </select>
-                <select name="startyear" class="startdate" style="margin-left: 42px;">
+                <select name="startyear" class="startyear">
                     <option value="" disabled selected>Year</option>
                     <option value="2024">2024</option>
                     <option value="2023">2023</option>
@@ -129,16 +126,20 @@
                 </select>
             </div>
             <div class="formnotes">
-                <label>Notes</label>
-                <textarea name="Notes" class="notes" cols="40" rows="4" style="margin-left: 70px;"></textarea>
-            </div>
-            <div class="formbtn">
-                <input type="button" value="Cancel" class="btn">
-                <span class="btngap"></span>
-                <input type="button" value="Submit" class="btn">
-                <input type="button" value="Reset" class="btn">
+                <textarea name="Notes" class="notes"></textarea>
             </div>
         </div>
+    </div>
+            <div class="formbtn">
+                <div class="btnleft">
+                    <input type="button" value="Cancel" class="btn">
+                </div>
+                <div class="btnright">
+                    <input type="button" value="Submit" class="subbtn">
+                    <input type="button" value="Reset" class="btn">
+                </div>
+            </div>
+      </div>
     </div>
 </body>
 </html>
