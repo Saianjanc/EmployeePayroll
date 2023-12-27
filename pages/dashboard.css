@@ -85,7 +85,7 @@
 table{
     width: 100%;
     border: 1.5px solid #E3E3E3;
-    border-collapse: collapse
+    border-collapse: collapse;
 }
 th {
     background: #42515F 0% 0% no-repeat padding-box;
@@ -103,10 +103,16 @@ td {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-bottom: 1.5px solid #E3E3E3;
 }
-.profileImg,.action-btn{
+.profileImg{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: start;
+    gap: 20px;
+}
+.action-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 .dept-outter{
     display: flex;

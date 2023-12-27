@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EmployeeRegisterForm</title>
     <link rel="stylesheet" href="index.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -32,68 +32,69 @@
                     <label class="formtext">Notes</label>
             </div>
             <div class="forminput">
-            <input type="text" class="formname">
+            <input type="text" class="formname" id="formname">
             <div class="formimg">
             <div class="profileimg" id="profileimg">
-                <input type="radio" name="profileimg" class="profile1">
+                <input type="radio" name="profileimg" class="profile" value="profile1">
                 <img src="/assests/profile1.png" alt="profile1">
             </div>
             <div class="profileimg">
-                <input type="radio" name="profileimg" class="profile2">
+                <input type="radio" name="profileimg" class="profile" value="profile2">
                 <img src="/assests/profile2.png" alt="profile2">
             </div>
             <div class="profileimg">
-                <input type="radio" name="profileimg" class="profile3">
+                <input type="radio" name="profileimg" class="profile" value="profile3">
                 <img src="/assests/profile3.png" alt="profile3">
             </div>
             <div class="profileimg">
-                <input type="radio" name="profileimg" class="profile4">
+                <input type="radio" name="profileimg" class="profile" value="profile4">
                 <img src="/assests/profile4.png" alt="profile4">
             </div>
         </div>
             <div class="formgender">
-                <input type="radio" name="Gender" class="Male">
+                <input type="radio" name="Gender" value="Male" class="gender">
                 <label>Male</label>
-                <input type="radio" name="Gender" class="Female">
+                <input type="radio" name="Gender" value="Female" class="gender">
                 <label>Female</label>
             </div>
             <div class="formdepartment">
             <div>
-                <input type="checkbox" name="Department" id="HR">
+                <input type="checkbox" name="Department" id="dept" class="dept" value="HR">
                 <label>HR</label>
             </div>
             <div>
-                <input type="checkbox" name="Department" id="Sales">
+                <input type="checkbox" name="Department" id="dept" class="dept" value="Sales">
                 <label>Sales</label>
             </div>
             <div>
-                <input type="checkbox" name="Department" id="Finance">
+                <input type="checkbox" name="Department" id="dept" class="dept" value="Finance">
                 <label>Finance</label>
             </div>
             <div>
-                <input type="checkbox" name="Department" id="Engineer">
+                <input type="checkbox" name="Department" id="dept" class="dept" value="Engineer">
                 <label>Engineer</label>
             </div>
             <div>
-                <input type="checkbox" name="Department" id="Others">
+                <input type="checkbox" name="Department" id="dept" class="dept" value="Others">
                 <label>Others</label>
             </div>
             </div>
             <div class="formsalary">
                 <input type="range" name="salary" id="salary" min="4" max="10">
+                <input type="text" name="salary" id="salarytxt" value="" readonly>
             </div>
             <div class="formstartdate">
-                <select name="startday" class="startdate">
+                <select name="startday" class="startdate" id="startday">
                     <option value="" disabled selected>Day</option>
                     <option value="Monday">Monday</option>
                     <option value="Tuesday">Tuesday</option>
                     <option value="Wednesday">Wednesday</option>
                     <option value="Thursday">Thursday</option>
-                    <option value="Frclassay">Frclassay</option>
+                    <option value="Friday">Friday</option>
                     <option value="Saturday">Saturday</option>
                     <option value="Sunday">Sunday</option>
                 </select>
-                <select name="startmonth" class="startmonth">
+                <select name="startmonth" class="startmonth" id="startmonth">
                     <option value="" disabled selected>Month</option>
                     <option value="January">January</option>
                     <option value="February">February</option>
@@ -108,7 +109,7 @@
                     <option value="Novmeber">Novmeber</option>
                     <option value="December">December</option>
                 </select>
-                <select name="startyear" class="startyear">
+                <select name="startyear" class="startyear" id="startyear">
                     <option value="" disabled selected>Year</option>
                     <option value="2024">2024</option>
                     <option value="2023">2023</option>
@@ -126,20 +127,22 @@
                 </select>
             </div>
             <div class="formnotes">
-                <textarea name="Notes" class="notes"></textarea>
+                <textarea name="Notes" class="notes" id="notes"></textarea>
             </div>
         </div>
     </div>
             <div class="formbtn">
                 <div class="btnleft">
-                    <input type="button" value="Cancel" class="btn">
+                    <input type="button" value="Cancel" class="btn" id="cancel-btn">
                 </div>
                 <div class="btnright">
-                    <input type="button" value="Submit" class="subbtn">
-                    <input type="button" value="Reset" class="btn">
+                    <input type="button" value="Submit" class="subbtn" id="submit-btn">
+                    <input type="button" value="Reset" class="btn" id="reset-btn">
                 </div>
             </div>
       </div>
     </div>
+    <script type="module" src="/js/index.js"></script>
+    <script type="module" src="/js/EmployeeDetails.js"></script>
 </body>
 </html>
