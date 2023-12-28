@@ -74,7 +74,7 @@
     width: 24%;
     display: flex;
     flex-direction: column;
-    gap: 38px;
+    gap: 39.5px;
 }
 .forminput{
     width: 75%;
@@ -87,6 +87,7 @@
     display: flex;
     height: 28px;
     gap: 18px;
+    align-items: center;
 }
 .formbtn{
     display: flex;

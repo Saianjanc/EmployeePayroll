@@ -6,6 +6,8 @@ window.addEventListener("DOMContentLoaded",function (){
 function displayTable(empData) {
     const addbtn = this.document.getElementById('addbtn')
     const empTable = this.document.getElementById('table-ctn')
+    const searchbtn = this.document.getElementById('searchbtn')
+    const searchTxt = this.document.getElementById('searchtxt')
     let template = `<table>
     <tr>
     <th>Name</th>
@@ -15,7 +17,10 @@ function displayTable(empData) {
     <th>Start Date</th>
     <th>Actions</th>
     </tr>`
-    if (localStorage.getItem("EmployeeData")) {
+    if (empData) {
+    searchbtn.addEventListener("click",function (){
+        searchAction(empData,empTable)
+    })
     empData.forEach(ele => {
         let depTemp =""
         for (const i of ele.Dept) {
@@ -37,6 +42,9 @@ function displayTable(empData) {
     }
     addbtn.addEventListener("click",function (){
         window.location.href = "/pages/index.html"
+    })
+    searchTxt.addEventListener("search",function (){
+        document.location.reload()
     })
 }
 function deleteEmp(empName) {
@@ -65,4 +73,39 @@ function editEmp(empName){
         })
     localStorage.setItem("EditEmpData",JSON.stringify(editEmp))
     window.location.href = "/pages/index.html"
+}
+
+function searchAction(empData,empTable) {
+    const searchTxt = this.document.getElementById('searchtxt')
+    let template = `<table>
+    <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Department</th>
+    <th>Salary</th>
+    <th>Start Date</th>
+    <th>Actions</th>
+    </tr>`
+    ele=empData.filter(e=>(e.Name==searchTxt.value))
+    ele=ele[0]
+    if (ele) {
+      let depTemp =""
+    for (const i of ele.Dept) {
+        depTemp += `<div class="dept-ctn">${i}</div>`
+        }
+    template = template + `<tr>
+    <td><div class="profileImg"><img src="/assests/${ele.empImg}.png" alt="profileimg"><label>${ele.Name}</label></div></td>
+    <td>${ele.Gender}</td>
+    <td><div class="dept-outter">`+depTemp+`
+    </div></td>
+    <td>₹ ${ele.Salary} LPA</td>
+    <td>${ele.StartDate}</td>
+    <td><div class="action-btn"><img src="/assests/bin.png" alt="delete" width="20px" height="24px" onclick="deleteEmp('${ele.Name}')"> <img src="/assests/edit.png" alt="edit" width="20px" height="20px" onclick="editEmp('${ele.Name}')"></div></td>
+    </tr>` 
+    empTable.innerHTML = template
+    }
+    else if(!searchTxt.value){document.location.reload()}
+    else{
+        empTable.innerHTML = "<center><h1>No Data Found!</h1></center>"
+    }
 }
